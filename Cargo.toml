@@ -1,0 +1,9 @@
+[package]
+name = "algo_classics"
+version = "0.0.1"
+author = ["Rafael Zimmermann <git@chess.mozmail.com>"]
+edition = "2021"
+
+[workspace]
+members = ["."]
+
