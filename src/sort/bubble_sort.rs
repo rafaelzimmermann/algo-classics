@@ -15,7 +15,7 @@ impl Sorter for BubbleSort {
     
 
     fn sort(self, slice: &mut [i32]) {
-        if slice.len() == 0 {
+        if slice.len() < 2 {
             return
         }
         for i in 0..slice.len()-1 {
@@ -44,6 +44,15 @@ mod tests {
     fn test_sort_non_empty_slice() {
         let mut xs: [i32; 2] = [5, 4];
         let expected: [i32; 2] = [4, 5];
+        let sorter: BubbleSort = BubbleSort::new();
+        sorter.sort(&mut xs);
+        assert!(xs.iter().zip(expected.iter()).all(|(a,b)| a == b), "Arrays are not equal");
+    }
+
+    #[test]
+    fn test_sort_slice_with_len_1() {
+        let mut xs: [i32; 1] = [5];
+        let expected: [i32; 1] = [5];
         let sorter: BubbleSort = BubbleSort::new();
         sorter.sort(&mut xs);
         assert!(xs.iter().zip(expected.iter()).all(|(a,b)| a == b), "Arrays are not equal");
