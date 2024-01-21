@@ -1,4 +1,5 @@
 mod bubble_sort;
+mod merge_sort;
 
 
 trait Sorter {
