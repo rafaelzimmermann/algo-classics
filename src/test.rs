@@ -1,3 +1,4 @@
 pub(crate) use {
-    sort::BubbleSort, 
+    sort::BubbleSort,
+    sort::MergeSort,
 };
